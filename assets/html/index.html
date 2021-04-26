@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+    <body>
+        <h1>
+            <center>Bali's Bot</center>
+            <hr>
+            <p>Discord ID</p>
+            <input type="text" id="add_id">
+            <button id="submit_add">Add to Allowed List</button>
+            <hr>
+            <p>Discord ID</p>
+            <input type="text" id="remove_id">
+            <button id="submit_remove">Remove from Allowed List</button>
+            <hr>
+            <label id="result_label"></label>
+        </h1>
+    </body>
+    <script>
+    document.getElementById('submit_add').addEventListener('click', async _ => {
+        fetch(`http://localhost:8495/add_id?id=${document.getElementById('add_id').value}`).then(res => {
+            if (res.ok) {
+                document.getElementById('result_label').innerHTML = `ID ${document.getElementById('add_id').value} added to allowed list!`
+            }
+        })
+    })
+    document.getElementById('submit_remove').addEventListener('click', async _ => {
+        fetch(`http://localhost:8495/del_id?id=${document.getElementById('remove_id').value}`).then(res => {
+            if (res.ok) {
+                document.getElementById('result_label').innerHTML = `ID ${document.getElementById('remove_id').value} removed from the allowed list!`
+            }
+        })
+    })
+    </script>
+</head>

@@ -1,0 +1,25 @@
+# Part 1
+
+Setup config.json to your liking
+
+# Part 2 - dependencies
+
+Install node-gyp by running the following in command prompt (as admin)
+
+npm install --global --production windows-build-tools --vs2015
+
+# Part 3 - additional dependencies
+(Run seperete)
+
+npm i node-gyp -g
+npm i discord.js@11.6.4 express quick.db
+
+# Starting bot
+
+Run the following
+
+node index.js
+
+if all works, the bot should be online and the admin panel will be working at
+
+http://localhost:8495
